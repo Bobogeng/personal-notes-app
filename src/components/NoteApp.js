@@ -15,11 +15,11 @@ function NoteApp({ locale, filteredNotes, isArchive, keyword, onSearchHandler })
             <div className="note-app__content">
                 {isArchive ? (
                     <h2>
-                        {locale === "id" ? "Catatan" : "Archive"} <span className="purple-text">{locale === "id" ? "Aktif" : "Notes"}</span>
+                        {locale === "id" ? "Catatan" : "Archive"} <span className="purple-text">{locale === "id" ? "Arsip" : "Notes"}</span>
                     </h2>
                 ) : (
                     <h2>
-                        {locale === "id" ? "Catatan" : "Active"} <span className="purple-text">{locale === "id" ? "Arsip" : "Notes"}</span>
+                        {locale === "id" ? "Catatan" : "Active"} <span className="purple-text">{locale === "id" ? "Aktif" : "Notes"}</span>
                     </h2>
                 )}
                 <NoteList notes={filteredNotes} />
