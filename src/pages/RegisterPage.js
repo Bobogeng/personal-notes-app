@@ -17,12 +17,12 @@ function RegisterPage() {
     return (
         <section className="register-page">
             <div className="card-input">
-                <h2>Register Page</h2>
+                <h2>{locale === "id" ? "Halaman Register" : "Register Page"}</h2>
                 <div className="divide"></div>
                 <RegisterInput register={onRegisterHandler} />
                 <div className="divide"></div>
                 <p>
-                    Kembali ke <Link to={ROUTES.LOGIN}>Masuk</Link>
+                    {locale === "id" ? "Kembali ke" : "Back to"} <Link to={ROUTES.LOGIN}>Login</Link>
                 </p>
             </div>
         </section>

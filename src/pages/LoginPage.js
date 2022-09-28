@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import LoginInput from "../components/LoginInput";
+import LocaleContext from "../contexts/LocaleContext";
 import { login } from "../utils/network-data";
 import ROUTES from "../utils/routes";
 
 function LoginPage({ loginSuccess }) {
+    const { locale } = useContext(LocaleContext);
+
     async function onLogin({ email, password }) {
         const { error, data } = await login({ email, password });
 
@@ -17,12 +20,12 @@ function LoginPage({ loginSuccess }) {
     return (
         <section className="login-page">
             <div className="card-input">
-                <h2>Login Page</h2>
+                <h2>{locale === "id" ? "Halaman Login" : "Login Page"}</h2>
                 <div className="divide"></div>
                 <LoginInput login={onLogin} />
                 <div className="divide"></div>
                 <p>
-                    Belum punya akun? <Link to={ROUTES.REGISTER}>Daftar di sini.</Link>
+                    {locale === "id" ? "Belum punya akun?" : "Don't have account?"} <Link to={ROUTES.REGISTER}>{locale === "id" ? "Daftar di sini." : "Register here."}</Link>
                 </p>
             </div>
         </section>
