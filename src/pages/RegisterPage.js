@@ -1,10 +1,12 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import RegisterInput from "../components/RegisterInput";
+import LocaleContext from "../contexts/LocaleContext";
 import { register } from "../utils/network-data";
 import ROUTES from "../utils/routes";
 
 function RegisterPage() {
+    const { locale } = useContext(LocaleContext);
     const navigate = useNavigate();
 
     async function onRegisterHandler(user) {
