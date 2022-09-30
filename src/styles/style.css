@@ -592,6 +592,10 @@ button:focus {
     .navigation__theme {
         margin-bottom: 20px;
     }
+
+    main {
+        min-height: 100vh;
+    }
 }
 
 @media (max-width: 358px) {
